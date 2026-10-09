@@ -1,0 +1,50 @@
+{
+  "name": "calagopus-deploy",
+  "version": "1.0.0",
+  "description": "CLI tool to bump version, create a GitHub release and restart a Calagopus server",
+  "main": "dist/index.js",
+  "bin": {
+    "calagopus-deploy": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "npm run clean && tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DylanDelobel/calagopus-deploy.git"
+  },
+  "keywords": [
+    "calagopus",
+    "deploy",
+    "release",
+    "restart",
+    "discord",
+    "bot"
+  ],
+  "author": "DylanDelobel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DylanDelobel/calagopus-deploy/issues"
+  },
+  "homepage": "https://github.com/DylanDelobel/calagopus-deploy#readme",
+  "dependencies": {
+    "axios": "^1.16.1",
+    "dotenv": "^17.4.2",
+    "semver": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@types/semver": "^7.7.1",
+    "typescript": "^6.0.3"
+  }
+}
